@@ -1,0 +1,32 @@
+.list-of-days{
+	margin-top: 10px;
+	text-align: center;
+}
+
+.table-view-cell{
+	padding: 11px 15px !important;
+}
+.footer-bar{
+	cursor: pointer;
+	background-color: #5cb85c !important;
+}
+
+.footer-bar .title{
+	color: white !important;
+}
+
+.input-search{
+	margin-top: 4px !important;
+	width: 80% !important;
+}
+
+.table-view-cell a{
+	float: left;
+} 
+.icon-star{
+	float: right;
+}
+
+.route-link{
+	width: 100%;
+}
