@@ -1,12 +1,16 @@
-<header class="bar bar-nav">
-  <button ng-click="backApp()" class="btn btn-outlined pull-left">Back</button>
-  <input class="input-search pull-right" ng-model="searchText" type="text" placeholder="Pesquisar">
-</header>
-<br><br>
-<ul class="table-view">
-  <li class="table-view-cell" ng-repeat="item in routes | filter:searchText">
-    <a href="#/routeDays/{{item.nameLine}}" class="">
-      {{item.nameLine}}
-    </a>
-  </li>
-</us>
+<div class="bar bar-header item-input-inset">
+  <a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="backApp()"></a>
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <input ng-model="searchText" type="text" placeholder="Pesquisar">
+  </label>
+  <button class="button button-clear">Cancel</button>
+</div>
+<ion-content overflow-scroll=”true”>
+	<div class="list">
+	    <a ng-repeat="item in routes | filter:searchText" href="#/routeDays/{{item.nameLine}}" class="item">
+	      {{item.nameLine}}
+	    </a>
+	    <i class="icon ion-ios-telephone-outline"></i>
+	</div>
+</ion-content>

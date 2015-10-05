@@ -1,42 +1,39 @@
-<header class="bar bar-nav">
+<div class="bar bar-header bar-positive">
+	<a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="backApp()"></a>
+	<h1 class="title">Saida de {{lineFrom}}</h1>
+	<a href="#/itinerary/{{line.nameLine}}" class="button pull-right">Ver itinerario</a>
+</div>
 
-  <button ng-click="backApp()" class="btn btn-outlined pull-left">Back</button>
-  <h1 class="title">Saida de {{lineFrom}}</h1>
-  <a href="#/itinerary/{{line.nameLine}}" class="btn btn-outlined pull-right">Ver itinerario</a>
-</header>
-<br><br>
-
-<div class="ui-grid-b list-of-days">
-  <div class="ui-block-a">
-	  <div class="item item-divider">
-	    Dias uteis
-	  </div>
-  	<ul class="table-view">
-	  <li class="table-view-cell" ng-repeat="item in workingDayLine.hora">
-	      {{item}}
-	  </li>
-	</us>
-  </div>
-  
-    <div class="ui-block-b">
-  	Sabádo
-  	<ul class="table-view">
-	  <li class="table-view-cell" ng-repeat="item in saturdayLine.hora">
-	      {{item}}
-	  </li>
-	</us>
-  </div>
-
-  <div class="ui-block-c">
-  	Domingo
-  	<ul class="table-view">
-	  <li class="table-view-cell" ng-repeat="item in sundayLine.hora">
-	      {{item}}
-	  </li>
-	</us>
-  </div>
-</div><!-- /grid-b -->
-
-<nav ng-click="changeFrom()" class="bar bar-tab footer-bar">
-  <div class="title">Ver de {{inverseLine}}</div>
-</nav>
+<ion-content overflow-scroll=”true”>
+	
+	<div class="row list-of-days">
+		<div class="col">
+			<ul class="list text-center">
+				<li class="item-divider">Dias uteis</li>
+				<li class="item" ng-repeat="item in workingDayLine.hora">
+			      {{item}}
+			 	</li>
+			</ul>
+		</div>
+		<div class="col">
+			<ul class="list text-center">
+				<li class="item-divider">Sabados</li>
+				<li class="item" ng-repeat="item in saturdayLine.hora">
+			      {{item}}
+			  	</li>
+			 </ul>
+		</div>
+		<div class="col text-center">
+			<ul class="list">
+				<li class="item-divider">Domingos</li>
+				<li class="item" ng-repeat="item in sundayLine.hora">
+			      {{item}}
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+</ion-content>
+<div class="bar bar-footer bar-balanced">
+  <div ng-click="changeFrom()" class="title">Ver de {{inverseLine}}</div>
+</div>

@@ -1,14 +1,16 @@
-<header class="bar bar-nav">
-	<button ng-click="backApp()" class="btn btn-outlined pull-left">Back</button>
-  	<h1 class="title">Saindo de {{city}}</h1>
-</header>
-<br><br>
-<ul class="table-view">
-  <li class="table-view-cell" ng-repeat="item in route">
-      {{item}}
-  </li>
-</ul>
+<div class="bar bar-header bar-positive">
+	<a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="backApp()"></a>
+	  <h1 class="title">Saindo de {{city}}</h1>
+</div>
 
-<nav ng-click="changeFrom()" class="bar bar-tab footer-bar">
-  <div class="title">Ver de {{inverseCity}}</div>
-</nav>
+<ion-content overflow-scroll=”true”>
+	<div class="allroutes">
+		<ul class="list">
+		    <li class="item" ng-repeat="item in route" >{{item}}</li>
+  		</ul>
+	</div>
+</ion-content>
+
+<div class="bar bar-footer bar-balanced">
+  <div ng-click="changeFrom()" class="title">Ver de {{inverseCity}}</div>
+</div>
